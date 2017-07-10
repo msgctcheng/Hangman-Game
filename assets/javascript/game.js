@@ -76,9 +76,6 @@ document.onkeyup = function(event) {
     };
 
    
-
-
-    console.log(lettersRemaining);
     
     if (ranwordArray.indexOf(keyPressed) == -1) {
         guessesLeft--;
@@ -131,6 +128,7 @@ document.onkeyup = function(event) {
             imgCounter = 0;
             picture.src = "assets/images/start.png";
             lettersRemaning = 0;
+            wordPicked = false;
             
         }
     }
@@ -151,6 +149,7 @@ document.onkeyup = function(event) {
             imgCounter = 0;
             picture.src = "assets/images/start.png";
             lettersRemaning = 0;
+            wordPicked = false;
             
 
     }}
