@@ -18,23 +18,32 @@ header {
 
    
 }
-
+#div {
+    float:left;
+}
 .start {
     width: 100%;
     text-align: center;    
 }
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
 
 .stage {
     width: 100%;
-    float: left;
-    padding-left: 33%;
+    
 }
 
 .letters {
-    clear:both;
-    width: 100%;
+    display:flex;
+    width: 60%;
     border: 1px solid black;
     text-align: center;
+    height: 48px;
+    padding: 0px 20% 0px 20%;
 
 }
 

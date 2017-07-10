@@ -5,7 +5,7 @@
         <title>Hangman Game</title>
 
         
-        <script src="assets/javascript/game.js"> </script>
+        
         <link rel="stylesheet" href="assets/css/style.css">
 
     </head>
@@ -18,45 +18,42 @@
         
         </header>
 
-        <div class="wrapper1">
+        <div id="form">
             
             <div class="start"> 
             
-                <h2>Press any key to start!</h2>
+                <h2>Press any key to start guessing!</h2>
                 <!--and test your sense of morality!-->
 
             </div>
 
             <div class="stage">
             
-                <img src="assets/images/start.png" alt="Start Image">
+                <img id="image" src="assets/images/start.png" alt="Start Image">
                 
             </div>
 
-            <div class="letters">
-            
-            </div> 
+            <div id="letters"></div> 
             
             <div class="guesses">
 
                 <h2><strong>Letters Guessed:</strong></h2>
-                <div class="guessed">
-                dfgdf
-                </div>  
+                
+                <div id="guessed"></div>  
 
             </div>
             
             <div class="records">
                 
-                <h2>:Guesses Left</h2>
+                <h2>Guesses Left:<span id="gLeft"> </span></h2>
                 
-                <h2>:Wins</h2>
+                <h2>Wins:<span id="wins"> </span></h2>
                 
-                <h2>:Losses</h2>
+                <h2s>Losses:<span id="loss"> </span></h2>
 
             </div>
         
         </div>
-
+        <script src="assets/javascript/game.js"> </script>
     </body>
 </html>
