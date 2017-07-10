@@ -139,7 +139,7 @@ document.onkeyup = function(event) {
     if (lettersRemaining == randomWord.length) {
         picture.src = "assets/images/win.png";
         winsNum++;
-        alert("You Win :D! The word was " + randomWord".");
+        alert("You Win :D! The word was " + randomWord);
 
         var resetGame = confirm("Do you want to play again?");    
     
@@ -147,18 +147,13 @@ document.onkeyup = function(event) {
             alreadyGuessed = [" "];
             lettersDiv.innerText = " ";
             randomWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-            guessesLeft = 10ffffff;
+            guessesLeft = 10;
             imgCounter = 0;
             picture.src = "assets/images/start.png";
             lettersRemaning = 0;
             
 
     }}
-
-    z
-
-   
-
     
 };
 
