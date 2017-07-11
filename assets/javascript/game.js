@@ -13,7 +13,7 @@ var alreadyGuessed = [];
 
 var wordPicked = false;
 
-var guessesLeft = 10;
+var guessesLeft = 9;
 
 var spacesArray = [];
 
@@ -31,6 +31,7 @@ picture.style.marginRight = "auto";
 
 var lettersRemaining = 0;
 
+ 
 
 document.onkeyup = function(event) { 
 
@@ -47,8 +48,7 @@ document.onkeyup = function(event) {
     document.getElementById("loss").innerText = lossNum;
 
 
-    
-    if (!wordPicked) {
+   if (!wordPicked) {
         
         wordPicked = true;
         
@@ -86,40 +86,50 @@ document.onkeyup = function(event) {
 
     if (imgCounter === 1) {
         picture.src = "assets/images/firstx.png";
-
     }
 
     if (imgCounter === 2) {
         picture.src = "assets/images/secondx.png";
-
     }
+
     if (imgCounter === 3) {
         picture.src = "assets/images/thirdx.png";
     }
+
     if (imgCounter === 4) {
         picture.src = "assets/images/fourthx.png";
     }
+
     if (imgCounter === 5) {
         picture.src = "assets/images/fifthx.png";
     }
+
     if (imgCounter === 6) {
         picture.src = "assets/images/sixthx.png";
     }
+
     if (imgCounter === 7) {
         picture.src = "assets/images/seventhx.png";
-    }    
+    }  
+
     if (imgCounter === 8) {
         picture.src = "assets/images/eighthx.png";
     }
+
     if (imgCounter === 9) {
         picture.src = "assets/images/ninthx.png";
     }
-    if (imgCounter === 10) {
+
+    if (guessesLeft <= 0 || imgCounter === 10) {
+
         picture.src = "assets/images/loss.png";
+
         lossNum++;
-        alert("You Lose... :(");
+
+        document.getElementById("heading").innerText = "You Lose... :( Press a key to start a new game.";
        
-        var resetGame = confirm("Do you want to play again?");    
+        var resetGame = confirm("You Lose...Do you want to play again?");  
+
         if (resetGame) {
             alreadyGuessed = [" "];
             lettersDiv.innerText = " ";
@@ -129,17 +139,17 @@ document.onkeyup = function(event) {
             picture.src = "assets/images/start.png";
             lettersRemaning = 0;
             wordPicked = false;
-            
-        }
+                
+        }    
     }
     
     
     if (lettersRemaining == randomWord.length) {
         picture.src = "assets/images/win.png";
         winsNum++;
-        alert("You Win :D! The word was " + randomWord);
+        document.getElementById("heading").innerText = "You Win :D! The word was " + randomWord + ". Press a key to start a new game.";
 
-        var resetGame = confirm("Do you want to play again?");    
+        var resetGame = confirm("You Win! Do you want to play again?");    
     
         if (resetGame) {
             alreadyGuessed = [" "];
@@ -152,7 +162,8 @@ document.onkeyup = function(event) {
             wordPicked = false;
             
 
-    }}
+        }
+    }
     
 };
 
