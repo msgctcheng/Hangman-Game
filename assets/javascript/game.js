@@ -5,7 +5,6 @@ var randomWord = wordBank[Math.floor(Math.random() * wordBank.length)];
 var picture = document.getElementById("image");
 
 var lettersDiv = document.getElementById("letters");
-console.log(randomWord);
 
 var ranwordArray = [];
 
@@ -60,7 +59,7 @@ document.onkeyup = function(event) {
             lettersDiv.style.fontSize = "xx-large"; 
             lettersDiv.style.marginLeft = "35%";
             ranwordArray.push(randomWord[i]);
-
+            document.getElementById('heading').innerText = "Press any key to guess!";
             
         };
     }
@@ -134,7 +133,7 @@ document.onkeyup = function(event) {
             alreadyGuessed = [" "];
             lettersDiv.innerText = " ";
             randomWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-            guessesLeft = 10;
+            guessesLeft = 9;
             imgCounter = 0;
             picture.src = "assets/images/start.png";
             lettersRemaning = 0;
@@ -147,6 +146,7 @@ document.onkeyup = function(event) {
     if (lettersRemaining == randomWord.length) {
         picture.src = "assets/images/win.png";
         winsNum++;
+        
         document.getElementById("heading").innerText = "You Win :D! The word was " + randomWord + ". Press a key to start a new game.";
 
         var resetGame = confirm("You Win! Do you want to play again?");    
@@ -155,7 +155,7 @@ document.onkeyup = function(event) {
             alreadyGuessed = [" "];
             lettersDiv.innerText = " ";
             randomWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-            guessesLeft = 10;
+            guessesLeft = 9;
             imgCounter = 0;
             picture.src = "assets/images/start.png";
             lettersRemaning = 0;
